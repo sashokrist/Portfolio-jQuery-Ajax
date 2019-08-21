@@ -15,16 +15,17 @@
       $( function() {
         $( "#portfolio" ).sortable({stop: function(){
             console.log('u just dropped img');
-            
+            var list_contents = $('portfolio').html();
+            $.post('change.php', {list:list_contents});
          }
        });
-        $( "#portfolio" ).disableSelection();
       } );
   </script>
 </head>
 <body>
     <div class="header">
       <h1>Portfolio</h1>
+      <input id='search' type="text" placeholder = 'search...' style ='float: right'>
     </div>
     <div id="overlay"></div>
     <div id="frame">

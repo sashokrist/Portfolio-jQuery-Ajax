@@ -1,8 +1,9 @@
 <?php
-    if(isset($_POST['order'])){
-        $content = $_POST['order'];
+    if(isset($_POST['list'])){
+        $content = $_POST['list'];
         $fp = foprn('list.html', 'w');
         fwrite($fp, $content);
         fclose($fp);
+        echo $content;
     }
 ?>

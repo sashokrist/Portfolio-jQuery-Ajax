@@ -1,6 +1,17 @@
 $(function(){
    var current_li;
 
+   $('#search').keypress(function(){
+      var current_query = $(this).val();
+      $('#portfolio li').hide();
+      $('#portfolio li').each(function(){
+         var current_keywords = $(this).attr('data-keywods');
+
+         if(current_keywords.indexOf(current_query) > 0){
+            $(this).show();
+         }
+      });
+   });
 
    function setImg(src, id){
       $('#main').attr('src', src);  //add clicked img to frame img tag
