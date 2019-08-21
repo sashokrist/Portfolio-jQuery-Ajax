@@ -1,6 +1,7 @@
 $(function(){
    var current_li;
 
+
    function setImg(src, id){
       $('#main').attr('src', src);  //add clicked img to frame img tag
       var path = "text/"+id+".txt";
